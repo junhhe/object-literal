@@ -1,0 +1,19 @@
+var hamburger = {
+meats: "beef",
+veg: "lettuce",
+cheese: "Mozzarella",
+mayo: true,
+mustard: false,
+ketchup: true,
+bbq: false,
+salt: true,
+pepper:true,
+price:7,
+qty: 1
+}
+//ask the user how many
+var amount = prompt("How many hamburgers do you want?");
+//tell the user how many they are buying 
+window.alert("you are buying " + amount + " hamburgers");
+//tell the user how many they owe
+window.alert("you owe " + amount*7 + " dollars");
