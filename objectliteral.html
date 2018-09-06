@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <style>
+      #hamburgerFinal {
+font-size:100px;
+}
+    </style>
+  </head>
+<body>
+  <script>
+    var hamburger = {
+      name: "kams Famous Burger",
+      bun:["plain", "sesame", "whole wheat"],
+      meat: ["beef", "pork", "chicken"],
+      veg:["pickles", "lettuce", "cucumber"],
+      cheese: ["american", "mozzarella", "bleu cheese"],
+      mayo: true,
+      ketchup: true,
+      mustard: true,
+      price: 10,
+      ounces: 3
+    }
+    
+    function randomBurger(){
+      var ranBun = Math.floor(Math.random()*hamburger.bun.length);
+      var ranMeat = Math.floor(Math.random()*hamburger.meat.length);
+      var ranVeg = Math.floor(Math.random()*hamburger.veg.length);
+      var ranCheese = Math.floor(Math.random()*hamburger.cheese.length);
+      var askMayo = prompt("Do you want mayo? Y or N")
+      askMayo.toLowerCase();
+      if ((askMayo === 'n') && (hamburger.mayo === true)) {
+            document.getElementById('hamburgerFinal').innerHTML = "Sorry has mayo";
+            return;
+      }
+      var askMustard = prompt("Do you want mustard? Y or N")
+      askMustard.toLowerCase();
+      if ((askMustard === 'n') && (hamburger.mustard === true)){
+            document.getElementById('hamburgerFinal').innerHTML = "Sorry has mustard";
+            return;
+      }
+      var askKetchup = prompt("Do you want ketchup? Y or N")
+      askKetchup.toLowerCase();
+      if ((askKetchup === 'n') && (hamburger.ketchup === true)){
+            document.getElementById('hamburgerFinal').innerHTML = "Sorry has ketchup";
+            return;
+      }
+      document.getElementById('hamburgerFinal').innerHTML = "You are going to eat a " + hamburger.bun[ranBun] + " " + hamburger.meat[ranMeat] + " " + hamburger.veg[ranVeg] + " " + hamburger.cheese[ranCheese] + " " + "burger.";
+    }
+  </script>
+  <button onclick="randomBurger()">click Me</button>
+  <p id="hamburgerFinal"></p>
+</body>
+</html>
